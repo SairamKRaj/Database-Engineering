@@ -1,1 +1,27 @@
+Due to my love for social network communication and analysis, in this project I built a simulation environment similar to Facebook and performed few fundamental queries.
 
+Characteristics of the social network database schema are:
+
+Tables:
+	USERS (USER_ID, FNAME, LNAME, GENDER, DATE_OF_BIRTH)
+	FRIENDSHIPS (INVITER_ID, INVITEE_ID, STATUS)
+	POSTS (POST_ID, USER_ID, TEXT)
+	COMMENTS (COMMENT_ID, POST_ID, USER_ID, TEXT)
+
+Table relationships:
+1.	INVITER_ID and INVITEE_ID attributes of the FRIENDSHIPS table are foreign keys referencing the USERS table.
+2.	USER_ID attribute of the POSTS table is the foreign key referencing the USER_ID attribute of the USERS table.
+3.	USER_ID attribute of the COMMENTS table is the foreign key referencing the USER_ID attribute of the USERS table.
+4.	POST_ID attribute of the COMMENTS table is the foreign key referencing the POST_ID of the POSTS table.
+
+Assumptions made:
+1.	All attributes of tables are NOT NULL.
+2.	With FRIENDSHIPS table, INVITER_ID is the USER_ID of the user who invites the user with
+3.	INVITEE_ID as friend.
+4.	The STATUS attribute of the FRIENDSHIPS table has value 0 if inviter invited invitee to be friend
+5.	and has not been accepted. Once accepted, the STATUS has value 1.
+6.	FNAME and LNAME are text attributes, each with a maximum of 50 characters.
+7.	The GENDER column of the USERS is represented as ‘F’ for female users and ‘M’ for
+8.	male users.
+9.	The format for the DATE_OF_BIRTH column is ‘YYYY-MM-DD’.
+10.	Assumed the corresponding data for every query exists and that it must return some records.
