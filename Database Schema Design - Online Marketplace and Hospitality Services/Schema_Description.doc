@@ -1,1 +1,40 @@
+In this project I designed a database schema for an online hospitality services company similar to Airbnb where users can rent or buy properties.
 
+The company had 2 kinds of users: Owners and Renters with the following properties:
+
+1.	A user can either be an Owner or Renter or both (wherein a user might rent out his own property and might be staying in another rented property mostly away from their home city).
+2.	Once registered in the app, the owner can post advertisement describing their subleased apartment.
+3.	A renter can pay for the property as per the advertised amount and rent it.
+4.	After staying at the apartment, the renter can leave a comment and rating for the property.
+5.	Property owner can comment on the renter who rented their properties.
+6.	A user cannot make a payment for a post he/she created and there is at most one post for a propery. 
+
+Properties are further classified into following categories:
+1.	Small (2-3 people).
+2.	Medium (4-6 people).
+3.	Large (7-10 people).
+4.	Extra-Large (more than 10 people).
+
+An user will have the following attributes:
+1.	Full Name.
+2.	Address.
+3.	E-Mail address.
+4.	Profile Photo.
+5.	Social Security Number.
+6.	Driver’s License ID.
+7.	Payment Options (like bank account, debit/credit card information, Paypal).
+
+Post will have the following properties:
+1.	Post title.
+2.	Address of the property.
+3.	Pictures (at least 5).
+4.	Videos (optional).
+5.	Description.
+6.	Property options (like number of bedrooms, number of bathrooms, Wi-Fi availability, Kitchen, Pets allowed) which would avoid repeated description of the property every time a post is made for it.
+7.	Sublease availability dates.
+8.	Per day rent price.
+9.	Expiry date (default 7 days) – depending on the number of active days of the post a fee can be paid to renew the advertisement. A post becomes inactive once it expires.
+
+Note:
+1.	Further assumptions made and methodologies followed are explained in the Weak_Entities_and_Relationships document.
+2.	Crow’s foot notation was used for the diagram.
