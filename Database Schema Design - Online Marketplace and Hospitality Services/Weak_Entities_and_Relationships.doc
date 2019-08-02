@@ -1,0 +1,29 @@
+Assumptions:
+• A renter may make at most one comment for the rent he/she paid for.
+• A property owner may make at most one comment for the user who paid the rent.
+Explanations:
+• Entity “Users” is used to represent a user in the system, including both property owners and
+renters.
+• Since a user may re-post a post many times, relationship between Posts – PostPayments is 1-N,
+relationship between Users – PostPayments is 1-N.
+• Comments may be included as attributes of Rents (hence, there is no need for Comments and
+PropertyComments entities). That is acceptable.
+• Attribute Status on entity Post may be redundant (the post is active or inactive can be known from
+the Expiry date).
+
+• Weak entities:
+o PropertyItems: A property must be created by a user. A property item cannot exist in the
+system without its owner.
+o Post: A post must relate to an owner and a specific property.
+o PropertyComments/RentComments: Comments cannot exist without the user who made
+it or the entity (Property / Rent) it targets to.
+o Payment methods: A payment method is for a specific user and hence, depends on the
+user.
+
+• Weak relationships: One may exist independently with the other.
+o Property Options – PropertyItems:
+o Size – PropertyItems
+o PayForPost – Users
+o Rent – Users
+o PaymentMethods - PayForPost
+o PaymentMethods – Rent
